@@ -17,14 +17,16 @@ span{display: inline-block;}
 
 .imgopacity{filter:alpha(opacity=50);opacity: 0.5;}
 
-.topBar{width:100%;height:64px;background:rgba(0,0,0,0.3);background-color:#7F7F7F;position:absolute;z-index: 10;min-width: 650px;overflow: hidden;}
-.topBar li{list-style-type:none;float: left;color:#FFF;height: 64px;text-align: center;padding: 0px;padding-top: 18px;}
-.topBar li a{color:#FFF;width: 160px;height: 100%;display: block; font-size: 24px;}
-.topBar span{float:left; font-size: 48px; color: #FFF;}
+.topBar{width:100%;height:40px;background:rgba(0,0,0,0.3);background-color:#7F7F7F;position:absolute;z-index: 10;min-width: 650px;overflow: hidden;}
+.topBar li{list-style-type:none;float: left;color:#FFF;height: 40px;text-align: center;padding: 0px;padding-top: 5px;}
+.topBar li a{color:#FFF;width: 160px;height: 100%;display: inline-block; font-size: 20px;}
+.topBar span{float:left; font-size: 32px; color: #FFF;}
 .topBar .logoR7{padding-top: 0px;width: 200px;}
 .topBar .active{background-color:#222;background: rgba(0,0,0,0.5);}
+.topBar li a.navbar-link{width:60px;font-size: 16px;}
+.topBar ul.pull-right li{padding-top: 15px;}
 
-.pagesContianer{height:100%;z-index: 9;display: none; top:64px;}
+.pagesContianer{height:100%;z-index: 9;display: none; top:40px;}
 .page{width:100%;height:100%;background:50% 50% no-repeat;background-size: cover;}
 .pageBackground{width: 100%;height: 100%;}
 .pageContent{width:100%;position: absolute;left:48px;/*left: 50%;margin-left: -500px;*/transform-origin:50% 50%;-webkit-transform-origin:50% 50%;}
