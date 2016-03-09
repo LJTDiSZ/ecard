@@ -1,0 +1,40 @@
+{
+  "name": "ecard",
+  "version": "1.0.0",
+  "description": "Namecard application",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.14.2",
+    "connect": "^3.4.1",
+    "connect-mongo": "^1.1.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "grunt-mocha-test": "^0.12.7",
+    "jade": "^1.11.0",
+    "kerberos": "0.0.18",
+    "moment": "^2.11.1",
+    "mongoose": "^4.3.6",
+    "morgan": "^1.6.1",
+    "querystring": "^0.2.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^2.1.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-nodemon": "^0.4.1",
+    "html2jade": "^0.8.4",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecard"
+  ],
+  "author": "Jimmy Li",
+  "license": "ISC"
+}

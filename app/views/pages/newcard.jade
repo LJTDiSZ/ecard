@@ -1,0 +1,68 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			form.form-horizontal(method="post", action="/card/save")
+				input(type="hidden", name="card[_id]", value="#{card._id}")
+				.form-group
+					label.col-sm-2.control-label(for="inputCname") 姓名(中文)
+					.col-sm-4
+						input#inputCname.form-control(type="text", name="card[cname]", 
+							value="#{card.cname}")
+					label.col-sm-2.control-label(for="inputEname") 姓名(英文)
+					.col-sm-4
+						input#inputEname.form-control(type="text", name="card[ename]",
+							value="#{card.ename}")
+				.form-group
+					label.col-sm-2.control-label(for="inputCtitle") 职务(中文)
+					.col-sm-4
+						input#inputCtitle.form-control(type="text", name="card[ctitle]",
+							value="#{card.ctitle}")
+					label.col-sm-2.control-label(for="inputEtitle") 职务(英文)
+					.col-sm-4
+						input#inputEtitle.form-control(type="text", name="card[etitle]",
+							value="#{card.etitle}")
+				.form-group
+					label.col-sm-2.control-label(for="inputTel") 电话
+					.col-sm-10
+						input#inputTel.form-control(type="text", name="card[tel]",
+							value="#{card.tel}")
+				.form-group
+					label.col-sm-2.control-label(for="inputMobile") 手机
+					.col-sm-10
+						input#inputMobile.form-control(type="text", name="card[mobile]",
+							value="#{card.mobile}")
+				.form-group
+					label.col-sm-2.control-label(for="inputEmail") 邮箱
+					.col-sm-10
+						input#inputEmail.form-control(type="text", name="card[email]",
+							value="#{card.email}")
+				.form-group
+					label.col-sm-2.control-label(for="inputCcompany") 公司(中文)
+					.col-sm-10
+						input#inputCompany.form-control(type="text", name="card[ccompany]",
+							value="#{card.ccompany}")
+				.form-group
+					label.col-sm-2.control-label(for="inputEcompany") 公司(英文)
+					.col-sm-10
+						input#inputEcompany.form-control(type="text", name="card[ecompany]",
+							value="#{card.ecompany}")
+				.form-group
+					label.col-sm-2.control-label(for="inputWebsite") 公司网站
+					.col-sm-10
+						input#inputWebsite.form-control(type="text", name="card[website]",
+							value="#{card.website}")
+				.form-group
+					label.col-sm-2.control-label(for="inputCaddress") 地址(中文)
+					.col-sm-10
+						input#inputCaddress.form-control(type="text", name="card[caddress]",
+							value="#{card.caddress}")
+				.form-group
+					label.col-sm-2.control-label(for="inputEaddress") 地址(英文)
+					.col-sm-10
+						input#inputEaddress.form-control(type="text", name="card[eaddress]",
+							value="#{card.eaddress}")
+				.form-group
+					.col-sm-offset-2.col-sm-10
+						button.btn.btn-defaut(type="submit") 录入

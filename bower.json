@@ -1,0 +1,26 @@
+{
+  "name": "ecard",
+  "description": "Namecard application",
+  "main": "app.js",
+  "moduleType": [],
+  "keywords": [
+    "ecard"
+  ],
+  "authors": [
+    "Jimmy Li"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}

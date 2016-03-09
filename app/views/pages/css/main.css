@@ -1,0 +1,72 @@
+﻿body{font-family: "Microsoft YaHei","SimHei","SimSun";/*background: #7F7F7F;*/padding: 0px;margin:0px;}
+ul{padding: 0px;margin: 0px;}
+a{text-decoration: none;}
+span{display: inline-block;}
+
+.fontHuge{font-size:120px;}
+.fontLarge{font-size:60px;}
+.fontMiddle{font-size:40px;}
+.fontSmall{font-size:18px;}
+.fontTiny{font-size:14px;}
+
+.container{padding:0px;width: 1180px;margin: 0 auto;}
+.pull-left{float:left;}
+.pull-right{float: right;}
+.text-left{text-align: left;}
+.text-center{text-align: center;}
+
+.imgopacity{filter:alpha(opacity=50);opacity: 0.5;}
+
+.topBar{width:100%;height:64px;background:rgba(0,0,0,0.3);background-color:#7F7F7F;position:absolute;z-index: 10;min-width: 650px;overflow: hidden;}
+.topBar li{list-style-type:none;float: left;color:#FFF;height: 64px;text-align: center;padding: 0px;padding-top: 18px;}
+.topBar li a{color:#FFF;width: 160px;height: 100%;display: block; font-size: 24px;}
+.topBar span{float:left; font-size: 48px; color: #FFF;}
+.topBar .logoR7{padding-top: 0px;width: 200px;}
+.topBar .active{background-color:#222;background: rgba(0,0,0,0.5);}
+
+.pagesContianer{height:100%;z-index: 9;display: none; top:64px;}
+.page{width:100%;height:100%;background:50% 50% no-repeat;background-size: cover;}
+.pageBackground{width: 100%;height: 100%;}
+.pageContent{width:100%;position: absolute;left:48px;/*left: 50%;margin-left: -500px;*/transform-origin:50% 50%;-webkit-transform-origin:50% 50%;}
+
+#page1 .pageBackground{background-color:#66ffcc;}
+#page1 #page1Text {position: absolute; left: 748px;top: 40%;font-family: 'Microsoft Yahei Light', 'Microsoft Yahei';text-align:center;}
+#page1 a{display:inline-block;margin:10px;border:1px solid #7f7f7f;border-radius:15px;background-color:#7f7f7f;color:#fff;height:100px;width:270px;font-size:56px;padding-top:15px;}
+#page1 .bk1{padding-top: 64px;}
+#page1 span{display:block;padding:10px;}
+
+#page2 .pageBackground{background-color:#96e980;}
+#page2 .bk1{padding-top: 96px;margin:5px;}
+#page2 #page2Text {padding-top:40px;font-family: 'Microsoft Yahei Light', 'Microsoft Yahei';text-align:center;}
+#page2 a{display:inline-block;margin:10px;border:1px solid #7f7f7f;border-radius:15px;background-color:#7f7f7f;color:#fff;height:40px;width:270px;font-size:24px;padding-top:10px;}
+#page2 span{display:block;padding:10px;}
+
+#page3 .pageBackground{background-color:#ccff66;}
+#page3 .pageContent{padding-top:40px;}
+#page3 #page3Text{clear:left;padding-top:40px;font-family: 'Microsoft Yahei Light', 'Microsoft Yahei';text-align:center;}
+#page3 a{display:inline-block;margin:10px;border:1px solid #7f7f7f;border-radius:15px;background-color:#7f7f7f;color:#fff;height:40px;width:270px;font-size:24px;padding-top:10px;}
+#page3 span{display:block;padding:10px;}
+#page3 #cnfield{float:left; width:40%; }
+#page3 #middle {float: left; width:20%; text-align:center;padding-top:160px;}
+#page3 #enfield{float:left; width:40%;}
+#page3 li{list-style-type:none;border:1px solid #7f7f7f;border-radius:10px;background-color:#7f7f7f;color:#fff;}
+#page3 #cnfield ul{width:120px;margin-left:auto;margin-right:2px;}
+#page3 #cnfield li{height: 24px;width:96px;margin:5px;text-align:center;}
+#page3 #enfield li{height: 24px;width:180px;margin:5px;text-align:center;}
+
+#page4 .pageBackground{background-color:#ffcc66;}
+#page4 .pageContent{padding-top:40px;}
+#page4 #page4Text {padding-top:40px;font-family: 'Microsoft Yahei Light', 'Microsoft Yahei';text-align:center;}
+#page4 a{display:inline-block;margin:10px;border:1px solid #7f7f7f;border-radius:15px;background-color:#7f7f7f;color:#fff;height:40px;width:270px;font-size:24px;padding-top:10px;}
+#page4 #card1{float:left;width:50%;text-align:center;}
+#page4 #card2{text-align:center;}
+
+#page5 .pageBackground{background-color:#dee661;}
+#page5 .pageContent{padding-top:40px;}
+#page5 #page5Text {padding-top:40px;font-family: 'Microsoft Yahei Light', 'Microsoft Yahei';text-align:center;clear:left;}
+#page5 a{display:inline-block;margin:10px;border:1px solid #7f7f7f;border-radius:15px;background-color:#7f7f7f;color:#fff;height:40px;width:270px;font-size:24px;padding-top:10px;}
+#page5 #card{float:left;width:50%;text-align:center;}
+#page5 li{list-style-type:none;font-size:24px; padding:10px;}
+#page5 span{width:96px;text-align:center;}
+#page5 input{line-height:28px; width:300px;font-size:24px;}
+

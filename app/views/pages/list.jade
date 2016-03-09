@@ -1,0 +1,49 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			table.table.table-hover.table-bordered
+				thead
+					tr
+						th 姓名(中文)
+						th 姓名(英文)
+						th 职务(中文)
+						th 职务(英文)
+						th 公司(中文)
+						th 公司(英文)
+						th 地址(中文)
+						th 地址(英文)
+						th 电话
+						th 手机
+						th 邮箱
+						th 网站
+						th 录入时间
+						th 查看
+						th 更新
+						th 删除
+				tbody
+					each item in cards
+						tr(class="item-id-#{item._id}")
+							td #{item.cname}
+							td #{item.ename}
+							td #{item.ctitle}
+							td #{item.etitle}
+							td #{item.ccompany}
+							td #{item.ecompany}
+							td #{item.caddress}
+							td #{item.eaddress}
+							td #{item.tel}
+							td #{item.mobile}
+							td #{item.email}
+							td #{item.website}
+							td #{moment(item.meta.createAt).format('MM/DD/YYYY')}
+							td: a(target="_blank", href="/card/#{item._id}")  查看
+							td: a(target="_blank", href="/card/update/#{item._id}") 修改
+							td 
+								button.btn.btn-danger.del(type="button", data-id="#{item._id}") 删除
+	script(src="/js/admin.js")
+
+
+
+					
