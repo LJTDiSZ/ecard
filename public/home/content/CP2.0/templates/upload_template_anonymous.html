@@ -1,0 +1,328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0079)http://www.cafepress.com/content/CP2.0/templates/upload_template_anonymous.html -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META name="GENERATOR" content="MSHTML 11.00.9600.17631"></HEAD>
+<BODY>
+<DIV class="global-uploader-container hidden" data-bind="css: {gradient: !collectionVisible(), hidden: !mainPageVisible()}">
+	 
+<DIV class="uploader-logo"><A onclick="location.href='http://'+document.domain" 
+href="http://www.cafepress.com/content/CP2.0/templates/upload_template_anonymous.html#"><IMG 
+title="CafePress" id="countryLogo" alt="CafePress" src="content/CP2.0/img/cplogo.png"></A>
+		 
+<DIV class="actionbar" data-bind="overflowHidden: actionBarVisible() &amp;&amp; primitiveDone()">
+<DIV class="action-options" data-bind="fadeShowOnlyVisible: !buyItFlowStarted() &amp;&amp; !makeMoneyFlowStarted() &amp;&amp; !shareFlowStarted() &amp;&amp; !editProductFlowStarted() &amp;&amp; !repositionFlowStarted()">
+<DIV class="action-header">
+<DIV class="action-options-head">Nice work! Now you can:</DIV>
+<DIV class="button-container">
+<DIV class="action edit">
+<DIV class="gbutton abutton editit" data-bind="click: editProductFlow">Edit 
+Products &raquo;</DIV><SPAN class="tipEditProduct" data-bind="fadeVisible: editProductsTooltipVisible">
+<DIV class="triangleEditProduct"></DIV>Click Edit Products to remove any 
+products you're unhappy with below.<BR><A data-bind="click: closeEditProductsTooltip">Close 
+tip</A></SPAN>						 </DIV>
+<DIV class="action sell">
+<DIV class="gbutton save" data-bind="click: makeMoneyFlow">Sell My Products 
+&raquo;</DIV></DIV>
+<DIV class="action buy">
+<DIV class="gbutton buyit" data-bind="click: buyItFlow">Buy My Products 
+&raquo;</DIV></DIV><!--<div class="action share">
+							<div class="gbutton save" data-bind="click: shareFlow">Share with My Friends &raquo;</div>
+						</div>-->
+						 
+<DIV class="tryagain">
+<DIV class="upload-button">TRY ANOTHER IMAGE &raquo;								 
+<DIV id="tryagain"></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV class="money" data-bind="fadeVisible: (makeMoneyFlowStarted() || shareFlowStarted()) &amp;&amp; !showLogin() &amp;&amp; !showTermsAndConditions() &amp;&amp; !reviewDialogAcceptTermsVisible()">
+<DIV class="sell-wrap">
+<H2>Almost there, we just need a little more information about your design.</H2>
+<FORM id="tag-design" action="/ws/getPartnerTags" method="POST">
+<FIELDSET>
+<DIV class="login-field"><LABEL class="placeholder" for="imgname">Image 
+Name:</LABEL>								 <INPUT name="email" tabindex="1" class="av-text" id="imgname" type="text" data-bind="value: collectionName, valueUpdate:'afterkeydown'" autocomplete="off">
+								 
+<DIV class="helptext" style="height: auto;">
+<P>What is this image? <EM>Ex: grumpy dog, heart pattern, 
+etc.</EM></P></DIV></DIV>
+<DIV class="login-field"><LABEL class="placeholder " for="tags">Tags:</LABEL>
+								 <INPUT name="tags" tabindex="2" class="tags" id="tags" type="tags" data-bind="value: imageInfo().tags, valueUpdate:'afterkeydown'" autocomplete="off">
+								 
+<DIV class="helptext" style="height: auto; display: none;">
+<P>Tags allow people to find your products, list the most appropriate tags for 
+your design. <EM>Ex: funny, animals, vintage, etc.</EM></P></DIV></DIV>
+<DIV style="clear: both;"></DIV><LABEL style="font-size: 14px;"><INPUT type="checkbox" 
+data-bind="checked: isTermsAccepted">					By clicking 'List Products' I agree to 
+the CafePress </LABEL><A class="nowrap pointer" style="color: rgb(170, 170, 170); text-decoration: underline; cursor: pointer;" 
+onclick='window.open("http://" + window.cafepress.www + "/cp/popup/index.aspx?page=terms_policies", "myWindow",&#10;"height = 450, width = 925, scrollbars=1")' 
+target="_blank">Terms of Service and Content Owner Agreement</A>.							 
+<DIV><INPUT tabindex="3" class="button listbutton" type="submit " value="List Products &raquo;" data-bind="click: getPartnerTags, visible: makeMoneyFlowStarted, css: {disabled: !areImageNameAndTagsFilled()}">
+								 <INPUT tabindex="3" class="button listbutton" type="submit " value="Publish and Share" data-bind="click: getPartnerTags, visible: shareFlowStarted">
+								 <BUTTON class="button listbutton cancelbutton" data-bind="click: notNow">Cancel</BUTTON>
+							 </DIV></FIELDSET></FORM><SPAN style="font-size: 14px;">You'll be able to 
+review and edit your products on the following page.</SPAN>				 </DIV></DIV><!-- sell end -->
+			 
+<DIV class="signup" data-bind="fadeVisible: showRegister">
+<DIV class="signup-wrap">
+<H2>Sign up to share your products:</H2>
+<FORM id="signup-form" action="/ws/registerorloginuser" method="POST">
+<FIELDSET>
+<DIV class="login-field"><LABEL class="placeholder" for="Firstname">First 
+Name:</LABEL>								 <INPUT name="Fname" tabindex="4" class="fname av-text" id="Fname" type="text" data-bind="value: registerData.firstName" autocomplete="off">
+							 </DIV>
+<DIV class="login-field" style="float: left;"><LABEL class="placeholder" for="Lastname">Last 
+Name:</LABEL>								 <INPUT name="Lname" tabindex="5" class="lname av-text" id="Lname" type="text" data-bind="value: registerData.lastName" autocomplete="off">
+							 </DIV>
+<DIV class="login-field"><LABEL class="placeholder" for="email">Email:</LABEL>
+								 <INPUT name="email" tabindex="6" class=" av-text" id="email" type="text" data-bind="value: registerData.email" autocomplete="off">
+								 
+<DIV class="helptext" style="height: auto;">
+<P>What's your email address?</P></DIV></DIV>
+<DIV class="login-field"><LABEL class="placeholder " 
+for="new_password">Password:</LABEL>
+								 <INPUT name="password" tabindex="7" class=" av-password" id="new_password" type="password" data-bind="value: registerData.password">
+								 
+<DIV class="helptext" style="height: auto; display: none;">
+<P>Choose a password that's at least six characters, including a number or 
+special 
+character.</P></DIV></DIV><INPUT tabindex="8" class="button submit" type="submit" value="Create My Account" data-bind="click: registerUser">
+							 <BUTTON class="button listbutton cancelbutton" 
+data-bind="click: notNow">Cancel</BUTTON>						 </FIELDSET></FORM><SPAN style="font-size: 14px;">By 
+clicking this button, you agree to CafePress's <A class="nowrap pointer" style="color: rgb(170, 170, 170); text-decoration: underline; cursor: pointer;" 
+onclick='window.open("http://" + window.cafepress.www + "/cp/popup/index.aspx?page=terms_policies", "myWindow",&#10;"height = 450, width = 925, scrollbars=1")' 
+target="_blank">Terms of Use and Policies</A>.</SPAN>					 
+<HR>
+
+<DIV class="login"><SPAN style="margin-right: 10px; float: left;">Already have 
+an account? </SPAN><SPAN class="gbutton" style="margin: 0px;" data-bind="click: toggleShowLogin">Log 
+in</SPAN></DIV></DIV></DIV><!-- signup end -->			 
+<DIV class="login" data-bind="fadeVisible: showLogin">
+<DIV class="signup-wrap">
+<H2>Sign in to share your products:</H2>
+<FORM id="signin-form" action="/ws/registerorloginuser" method="POST">
+<FIELDSET>
+<DIV class="login-field"><LABEL class="placeholder" for="email">Email:</LABEL>
+								 <INPUT name="email" tabindex="9" class=" av-text" id="email" type="text" data-bind="value: loginData.email" autocomplete="off">
+							 </DIV>
+<DIV class="login-field"><LABEL class="placeholder " 
+for="new_password">Password:</LABEL>								 <INPUT name="password" tabindex="10" class=" av-password" id="new_password" type="password" data-bind="value: loginData.password">
+							 </DIV><INPUT tabindex="11" class="button submit" type="submit" value="Log In" data-bind="click: loginUser">
+							 <BUTTON class="button listbutton cancelbutton" 
+data-bind="click: notNow">Cancel</BUTTON>						 </FIELDSET></FORM></DIV></DIV><!-- login end -->
+			 
+<DIV class="terms-wrap" data-bind="visible: showTermsAndConditions">
+<H2>Accept Terms &amp; Conditions</H2>
+<FIELDSET><!-- ko foreach: notAcceptedPartnerTags -->				 
+<DIV id="term"><INPUT name="accept" type="checkbox" data-bind="checked: Accepted">
+					Accept <SPAN data-bind="text: PartnerName"></SPAN> <A style="color: rgb(170, 170, 170); text-decoration: underline; cursor: pointer;" 
+data-bind="attr:{href: $root.getTermsAndConditionsUrl($data)}">Terms &amp; 
+Conditions</A>				 </DIV><!-- /ko -->
+					 <INPUT class="button listbutton" type="submit " value="Accept" data-bind="css:{hidden: !showAcceptTermsAndConditionsButton()}, click: persistPartnerTags">
+					 <INPUT class="button listbutton cancelbutton" type="submit " value="Cancel" data-bind="click: cancelPartnerTags">
+				 </FIELDSET></DIV>
+<DIV class="review" data-bind="fadeVisible: buyItFlowStarted() &amp;&amp; reviewDialogVisible() &amp;&amp; !reviewDialogAcceptTermsVisible()">
+<DIV class="review-wrap">
+<DIV class="item-wrap" data-bind="foreach: selectedSuggestions">
+<DIV class="item">
+<DIV class="removeReviewedItem" data-bind="click: $root.disselectSuggestion.bind($data)">X</DIV><IMG 
+width="75" height="75" data-bind="attr: {src: $root.resizedProductImage($data.ProductCrunchUrls()[0], 75) }">
+							 
+<P data-bind="text:$root.computedProductTypeCaption($data)"></P>
+<DIV class="price" 
+data-bind="text: $root.currency().Symbol + $data.salePrice()"></DIV></DIV></DIV>
+<DIV style="clear: both;"></DIV>
+<P>You will be able to change the quantities, sizes and colors on the next 
+page.</P><LABEL style="font-size: 14px;"><INPUT type="checkbox" data-bind="checked: isTermsAccepted">
+					By clicking 'Proceed to Cart' I agree to the CafePress </LABEL><A class="nowrap pointer" 
+style="color: rgb(170, 170, 170); text-decoration: underline; cursor: pointer;" 
+onclick='window.open("http://" + window.cafepress.www + "/cp/popup/index.aspx?page=terms_policies", "myWindow",&#10;"height = 450, width = 925, scrollbars=1")' 
+target="_blank">Terms of Service and Content Owner Agreement</A>.					 <BUTTON 
+class="button listbutton cancelbutton" 
+data-bind="click: addToCartAfterReview">Proceed to Cart</BUTTON>					 <BUTTON 
+class="button listbutton cancelbutton" data-bind="click: cancelReviewAndAddPopup">Cancel</BUTTON>
+				 </DIV></DIV><!-- review addtocart dialog end -->			 
+<DIV class="review" data-bind="fadeVisible: reviewDialogAcceptTermsVisible()">
+<DIV class="review-wrap">
+<P>You must first accept the CafePress Terms of Service and Content Owner 
+Agreement order to proceed.</P><A class="nowrap pointer" style="color: rgb(170, 170, 170); text-decoration: underline; cursor: pointer;" 
+onclick='window.open("http://" + window.cafepress.www + "/cp/popup/index.aspx?page=terms_policies", "myWindow",&#10;"height = 450, width = 925, scrollbars=1")' 
+target="_blank">Terms of Service</A>					  <A class="nowrap pointer" style="color: rgb(170, 170, 170); text-decoration: underline; cursor: pointer;" 
+onclick='window.open("http://" + window.cafepress.www + "/cp/popup/index.aspx?page=terms_policies", "myWindow",&#10;"height = 450, width = 925, scrollbars=1")' 
+target="_blank">Content Owner Agreement</A>					 
+<DIV><BUTTON class="button listbutton cancelbutton" data-bind="click: acceptTerms">I 
+accept</BUTTON>						 <BUTTON class="button listbutton cancelbutton" data-bind="click: cancelAcceptTermsPopup">No 
+Thanks</BUTTON>					 </DIV></DIV></DIV><!-- review accept terms dialog end -->
+			 
+<DIV class="review" data-bind="fadeVisible: editProductFlowStarted() &amp;&amp; reviewDialogVisible()">
+<DIV class="review-wrap">
+<P style="color: black; padding-bottom: 24px; font-size: 16px; font-weight: bold;">Confirm 
+your choices:</P>
+<DIV class="item-wrap" data-bind="foreach: selectedSuggestions">
+<DIV class="item">
+<DIV class="removeReviewedItem" data-bind="click: $root.disselectSuggestion.bind($data)">X</DIV><IMG 
+width="75" height="75" data-bind="attr: {src: $root.resizedProductImage($data.ProductCrunchUrls()[0], 75) }">
+							 
+<P data-bind="text:$root.computedProductTypeCaption($data)"></P></DIV></DIV>
+<DIV style="clear: both;"></DIV><BUTTON class="button listbutton cancelbutton abutton" 
+data-bind="click: cancelReviewAndAddPopup">Cancel</BUTTON>					 <BUTTON class="button listbutton cancelbutton" 
+data-bind="click: deleteAfterReview">Confirm Delete</BUTTON>				 </DIV></DIV><!-- review delete products dialog end-->
+			 
+<DIV class="review" data-bind="fadeVisible: repositionFlowStarted() &amp;&amp; reviewDialogVisible()">
+<DIV class="review-wrap review-wrap-reposition">
+<DIV class="review-reposition-title">
+<DIV class="review-title-right right">Choose Fit or Fill</DIV>
+<DIV class="review-title-left left">reposition your image:</DIV></DIV>
+<DIV class="review-reposition-title-note">PLEASE NOTE:  Making a change here may 
+affect the product assortment you saw in the previous step. We will re-analyze 
+your image for the perfect matches!</DIV>
+<DIV id="fitfillSamples">
+<DIV class="fill">
+<DIV class="samples-title">
+<DIV class="small small-add"> Expand to completely fill the print area of each 
+product - no blank space.</DIV>
+<DIV class="big">fill: </DIV></DIV>
+<DIV class="example-container">
+<DIV class="example-img fill-img" data-bind="css:{disabled: fitChosen() &amp;&amp; !fitSelected()} ,click: chooseFitFillOption.bind(this,false)"></DIV>
+<DIV class="example-text">Example:</DIV></DIV>
+<DIV class="listbutton buttons buttons-fill" data-bind="css:{disabled: fitChosen() &amp;&amp; !fitSelected()} ,click: chooseFitFillOption.bind(this,false)">
+<P data-bind="css:{disabled: fitChosen() &amp;&amp; !fitSelected()}">Choose Fill 
+&raquo;</P></DIV></DIV>
+<DIV class="fit">
+<DIV class="samples-title">
+<DIV class="small">Shrink to fit within the print area of each product.</DIV>
+<DIV class="big">fit: </DIV></DIV>
+<DIV class="example-container">
+<DIV class="example-img fit-img" data-bind="css:{disabled: fitChosen() &amp;&amp; fitSelected()} ,click: chooseFitFillOption.bind(this,true)"></DIV>
+<DIV class="example-text">Example:</DIV></DIV>
+<DIV class="listbutton buttons" data-bind="css:{disabled: fitChosen() &amp;&amp; fitSelected()} ,click: chooseFitFillOption.bind(this,true)">
+<P data-bind="css:{disabled: fitChosen() &amp;&amp; fitSelected()}">Choose Fit 
+&raquo;</P></DIV></DIV></DIV>
+<DIV class="gbutton button-reposition-dialog abutton" 
+data-bind="click: notNow">Cancel</DIV></DIV>
+<DIV class="review-wrap closebutton" data-bind="click: notNow">Close</DIV></DIV><!-- review reposition image dialog end -->
+			 
+<DIV class="buyflow" data-bind="fadeShowOnlyVisible: buyItFlowStarted() &amp;&amp; !reviewDialogVisible()">
+<DIV class="buyflow-message">Mark products you would like to purchase below, 
+then add to cart. </DIV>
+<DIV class="gbutton" data-bind="css:{disabled: selectedSuggestionsCount() == 0}, click: reviewAndAddToCartSelected">Review 
+&amp; Add to Cart</DIV>
+<DIV class="gbutton notnow" data-bind="click: notNow">Cancel</DIV></DIV>
+<DIV class="editflow" data-bind="fadeShowOnlyVisible: editProductFlowStarted() &amp;&amp; !reviewDialogVisible()">
+<DIV class="buyflow-message">Check the products below you wish to delete. </DIV>
+<DIV class="gbutton" data-bind="css:{disabled: selectedSuggestionsCount() == 0}, click: reviewAndDeleteSelected">Delete 
+Selected Items</DIV>
+<DIV class="gbutton notnow" 
+data-bind="click: notNow">Cancel</DIV></DIV></DIV></DIV>
+<DIV class="step1">
+<DIV class="upload-wrapper" data-bind="visible: isBrowserHtml5UploadCapable() || isBrowserFlashCapable()"></DIV>
+<DIV class="unsupported-browser" data-bind="fadeVisible: !isBrowserHtml5UploadCapable() &amp;&amp; !isBrowserFlashCapable()">
+			Your browser is neither HTML5 enabled, nor it has Flash plugin installed. You 
+can download <A href="http://www.google.com/chrome/">HTML5 enabled browser 
+provided by Google</A> or just install <A href="http://get.adobe.com/flashplayer/">Flash</A> 
+on your current browser.		 </DIV></DIV>
+<DIV class="step2" data-bind="fadeVisible: uploadPageVisible"><ASIDE class="leftcolumn" 
+data-bind="css: {'upload-complete': collectionVisible()}">
+<DIV class="loadedimg" data-bind="fadeShowOnlyVisible: uploadPageImagePreviewVisible"><IMG 
+width="100" data-bind="attr: {src: imagePreview}">				 
+<DIV class="repositionbutton" data-bind="click: repositionFlow, fadeVisible: collectionVisible "></DIV><SPAN 
+class="tipReposition" data-bind="css:{'reposition-tooltip-visible': repositionTooltipVisible()}">
+<DIV class="triangleReposition"></DIV>Don't like the way your image is 
+positioned on the products? Change it globally here.<BR><A data-bind="click: closeRepositionTooltip">Close 
+tip</A></SPAN>				 
+<P class="imagename" data-bind="text: imageNameForDisplay"></P>
+<P class="productmatch" data-bind="visible: numberOfSuggestions() > 0"><!-- ko text: numberOfSuggestions --><!-- /ko --> 
+products</P>
+<DIV data-bind="visible: !$root.primitiveDone() &amp;&amp; $root.uploadReadyVisible()"><IMG 
+class="loading" 
+src="content/CP2.0/img/loadingdots2.gif"></DIV></DIV>
+<DIV class="imgHolder" 
+data-bind="visible: !uploadPageImagePreviewVisible()"></DIV></ASIDE><SECTION 
+class="rightcolumn">
+<DIV class="uploadPage" data-bind="visible: !collectionVisible()">
+<H1>Uploading your [ <SPAN class="insertKeyword" 
+data-bind="text: keyword">photo</SPAN> ]</H1>
+<P class="description">Your upload is being analyzed and matched with the 
+perfect products from our catalog.</P><IMG class="loading" src="content/CP2.0/img/loadingdots2.gif" 
+data-bind="visible: !uploadReadyVisible()">				 
+<DIV class="ready" data-bind="fadeShowOnlyVisible: uploadReadyVisible">Success! 
+<BR><SPAN class="green"><!-- ko text: numberOfSuggestions --><!-- /ko --> 
+products</SPAN> created with your design.</DIV></DIV>
+<DIV class="previewPage" data-bind="slideVisible: collectionVisible">
+<DIV class="item-wrap">
+<DIV class="filters">
+<DIV class="total-items">
+<H4 data-bind="visible: numberOfSuggestions() > 0">[ <SPAN><!-- ko text: numberOfSuggestions --><!-- /ko --></SPAN> 
+] Products Created! </H4><A onclick="$('#tryagain').click();" href="http://www.cafepress.com/content/CP2.0/templates/upload_template_anonymous.html#">Try 
+another image</A>                         </DIV>
+<DIV class="sortby">Sort by:</DIV>
+<UL><!-- ko foreach: filters -->                             
+  <LI data-bind="click: $root.selectFilter.bind($data), text: name, css: { selected: $root.currentFilter() == $data }"></LI><!-- /ko --> 
+                                                 </UL></DIV>
+<H1 style="font-size: 20px;">Name your image: 
+<INPUT class="collectName" data-bind="hasfocus: collectionNameWasFocused, value: collectionName, valueUpdate:'afterkeydown', attr:{maxlength: getMaxImageCaptionLengthBasedOnProductTypeNames()}"></H1><!-- ko with: currentCategory -->
+					 
+<H2 data-bind="visible: $data != null &amp;&amp; !$root.departmentsFilterVisible(), text: Title"></H2><!-- /ko -->					
+					
+<H2 data-bind="visible: departmentsFilterVisible">Categories</H2>
+<DIV class="filter-submenu" data-bind="visible: departmentsFilterVisible"><!-- ko foreach: departmentsWithProducts -->
+							 
+<DIV class="department-filter" data-bind="click: $root.selectCategory.bind($data)">
+<H3><!-- ko text: Title -->  <!-- /ko --> &gt;</H3>
+<DIV>[ <SPAN data-bind="text: productsInThisDepartment"></SPAN> ] 
+Products</DIV></DIV><!-- /ko -->					 </DIV>
+<DIV class="items-contaniner"><!-- ko foreach: visibleSuggestions -->					     
+<ARTICLE class="item" data-bind="css:{gray: $root.buyItFlowStarted || $root.editProductFlowStarted, lazy: $index() > 11}, attr: {ptn: ProductTypeNo, designid: ImageNo, productid: productNo, guid: GUID, memberno: $root.memberNo, token: $root.token, width: width, height: height, cropX: cropX, cropY: cropY }">
+<DIV class="views" data-bind="foreach: $root.resizedProductImages($data.ProductCrunchUrls, 230), click: $root.onSuggestionImageClick.bind($data, $element)"><IMG 
+width="230" height="230" data-bind="attr: {'data-original': $root.visibleSuggestions().indexOf($parent) > 11 ? $data : '', src: $root.visibleSuggestions().indexOf($parent) > 11 ? '' : $data }, visible: $index() == 0">
+						     </DIV>
+<DIV class="itemDetails">
+<DIV class="remove" data-bind="click: $root.removeSuggestion.bind($data)">
+<DIV class="trashbin"></DIV>
+<DIV class="removeWrap">remove </DIV></DIV>
+<DIV class="checkbox" data-bind="fadeVisible: ($root.buyItFlowStarted() &amp;&amp; $root.canAddToCart($data)) || $root.editProductFlowStarted()"><INPUT 
+type="checkbox" data-bind="checked: selected"></DIV>
+<DIV class="magnifier" data-bind="click: $root.showQuickView.bind($data)"></DIV>
+<P data-bind="text:$root.computedProductTypeCaption($data), slideHeightVisible: !$root.showOosMessage($data) || !$root.mobileView() "></P>
+<DIV class="error-message" data-bind="slideHeightVisible: $root.showOosMessage($data)">Temporarily 
+Out of Stock</DIV><SPAN class="price" data-bind="slideHeightVisible: (( ($root.mobileView() || $root.buyItFlowStarted()) &amp;&amp; $root.canAddToCart($data)) || $root.editProductFlowStarted()) &amp;&amp; !$root.showOosMessage($data), text: $root.currency().Symbol + $data.salePrice()"></SPAN>
+						     </DIV></ARTICLE><!-- /ko -->                     </DIV><A class="load-more-items" 
+href="http://www.cafepress.com/content/CP2.0/templates/upload_template_anonymous.html#" 
+data-bind="click: loadMore, visible: showLoadMore">Load more                     
+     <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" 
+viewBox="0 0 20 20" x="0px" y="0px" width="20px" height="20px" xmlns:xml="http://www.w3.org/XML/1998/namespace" 
+xml:space="preserve" version="1.1"><polygon fill="#747474" points="2.231,7.965 9.546,15.282 9.908,15.437 10.27,15.282 17.582,7.965 17.74,7.604 17.582,7.245 16.8,6.459 16.439,6.304 16.078,6.459 9.908,12.63 3.738,6.459 3.376,6.304 3.016,6.459 2.231,7.245 2.073,7.604" 
+/>                         </svg>                     </A>
+				 </DIV></DIV></SECTION></DIV>
+<DIV class="overlay" data-bind="fadeVisible: currentQuickViewSuggestion() != null, click: hideQuickView">
+<DIV class="quickview" data-bind="with: currentQuickViewSuggestion, visible: currentQuickViewSuggestion() != null, click: eventPropagationWorkaroundForQuickView">
+<DIV class="closeQuickView" data-bind="click: $root.hideQuickView">X</DIV>
+<DIV class="arrow-left icon-angle-left global" data-bind="click: $root.loadPreviousSuggestion"></DIV>
+<DIV class="arrow-right icon-angle-right global" data-bind="click: $root.loadNextSuggestion"></DIV>
+<DIV class="views"><IMG width="400" height="400" data-bind="attr: {src: $root.resizedProductImage($root.currentQuickViewImageUrl, 400)}">
+			 </DIV>
+<DIV class="thumbs" data-bind="visible:$data.ProductCrunchUrls().length > 1, foreach: $root.resizedProductImages($data.ProductCrunchUrls, 75)"><IMG 
+width="75" height="75" data-bind="attr: {src: $data}, click: $root.clickThumbnailView.bind($data)">
+			 </DIV>
+<DIV class="itemDetails">
+<DIV class="plus">+</DIV>
+<P data-bind="text:$root.computedProductTypeCaption($data)"></P>
+<DIV class="buyinfo" data-bind="visible: salePrice() != 0">
+<DIV class="price" 
+data-bind="text: $root.currency().Symbol + $data.salePrice()"></DIV></DIV>
+<DIV class="details"><SPAN data-bind="text: $root.getProductTypeDimensions($data), visible: ProductTypeWidth() != 0 &amp;&amp; ProductTypeHeight() != 0"></SPAN><BR><SPAN 
+data-bind="html: description, visible: description() != ''"></SPAN>				 </DIV>
+<DIV class="add-to-card"><STRONG data-bind="fadeVisible:$root.canAddToCart($data)">Quantity: 
+<INPUT class="input-qty" type="text" data-bind="value: $root.currentQuickViewProductsCount"></STRONG> 
+                    
+<DIV><BUTTON type="button" data-bind="fadeVisible:$root.canAddToCart($data), click:$root.addToCart.bind($data)">Add 
+to cart <I class="icon-cp-cart"></I></BUTTON>                         
+<DIV>Size and color options available at checkout</DIV></DIV></DIV></DIV>
+<DIV class="quickview-footer">
+<DIV>You can also save this product to your Favorite list and view it 
+later.</DIV>
+<DIV class="quickview-status favourite icon-heart" data-bind="click:$root.addToFavourites.bind($data)"><SPAN>Favorite</SPAN></DIV></DIV></DIV></DIV>
+<DIV class="loading-spinner" data-bind="fadeVisible: loading"></DIV>
+<DIV id="footer-mobile-message-holder" data-bind="fadeVisible: mobileFooterVisible() &amp;&amp; mobileView(), style: {bottom: footerMessageBottomPosition()}">
+<DIV class="footer-mobile-message-close-button" data-bind="click: closeMobileFooter">X</DIV><SPAN 
+id="footer-mobile-message">Want more options? Visit Cafepress on your laptop or 
+desktop for full customization control!</SPAN>	 </DIV></DIV></BODY></HTML>

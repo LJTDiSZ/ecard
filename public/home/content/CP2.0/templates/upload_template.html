@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0069)http://www.cafepress.com/content/CP2.0/templates/upload_template.html -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META name="GENERATOR" content="MSHTML 11.00.9600.17631"></HEAD>
+<BODY>
+<DIV class="wrapper clearfix">	 
+<DIV class="control-module bg" data-bind="fadeVisible: uploadPageVisible">
+<DIV class="wrapper clearfix">
+<H3 class="uc">Design Details</H3>
+<DIV class="control-details">
+<DIV class="image-wrap">
+<DIV class="control-img"><IMG width="125" data-bind="fadeShowOnlyVisible: uploadPageImagePreviewVisible, attr: {src: imagePreview}, css:{inProgress: !primitiveDone()}">
+						 
+<DIV class="image-holder" 
+data-bind="visible: !uploadPageImagePreviewVisible()"></DIV></DIV>
+<DIV class="repositionbutton" data-bind="click: repositionFlow, fadeVisible: collectionVisible "></DIV><SPAN 
+class="tipReposition" data-bind="fadeVisible: repositionTooltipVisible">
+<DIV class="triangleReposition"></DIV>Don't like the way your image is 
+positioned on the products? Change it globally here.<BR><A data-bind="click: closeRepositionTooltip">Close 
+tip</A></SPAN>					 <IMG class="loading-dots" src="content/CP2.0/img/loadingdots2.gif" 
+data-bind="css:{hidden: primitiveDone()}">					 
+<DIV class="image-details" data-bind="fadeShowOnlyVisible: uploadPageImagePreviewVisible"></DIV></DIV>
+<FORM id="edit-design-form" method="POST">
+<UL>
+  <LI><LABEL class="green" for="imgname">Name:</LABEL>							 <INPUT name="email" tabindex="1" class=" av-text" id="imgname" type="text" placeholder="Design Name" value="" data-bind="value: collectionName, valueUpdate:'afterkeydown'" autocomplete="off">
+  						 </LI>
+  <LI class="clearfix"><LABEL class="green " for="tags">Tags:</LABEL>
+							 <INPUT name="tags" tabindex="2" class="tags" id="tags" type="text" placeholder="Tags for your Design" value="" data-bind="value: imageInfo().tags, valueUpdate:'afterkeydown'" autocomplete="off">
+  						 </LI>
+  <LI><LABEL class="green v-center" for="about">About:</LABEL>
+							 <TEXTAREA name="design-description" id="about" maxlength="175" placeholder="Write a short description about this design (150 characters)" rows="3" data-bind="value: imageInfo().about" autocomplete="off">Write a short description about this design (150 characters)</TEXTAREA>
+  						 </LI></UL>
+<UL>
+  <LI><INPUT tabindex="3" class="button" type="submit" value="Save Design" data-bind="css: {disabled: !primitiveDone() || !areImageNameAndTagsFilled()}, click: getPartnerTags"></LI>
+  <LI class="button button-black" data-bind="css: {disabled: !primitiveDone()}, click: deactivateImageAndReset">Cancel</LI></UL><BR><SPAN 
+class="upload-terms">By clicking 'Save Design', you agree to CafePress's <A 
+class="nowrap" onclick='window.open("http://" + window.cafepress.www + "/cp/popup/index.aspx?page=terms_policies", "myWindow", "height = 450, width = 925, scrollbars=1")' 
+target="_blank">Terms of Use and Policies</A>.</SPAN>
+				 </FORM></DIV></DIV></DIV>
+<DIV class="review" data-bind="fadeVisible: repositionFlowStarted() &amp;&amp; reviewDialogVisible()">
+<DIV class="review-wrap review-wrap-reposition">
+<DIV class="review-reposition-title">
+<DIV class="review-title-right right">Choose Fit or Fill</DIV>
+<DIV class="review-title-left left">reposition your image:</DIV></DIV>
+<DIV class="review-reposition-title-note">PLEASE NOTE:  Making a change here may 
+affect the product assortment you saw in the previous step. We will re-analyze 
+your image for the perfect matches!</DIV>
+<DIV id="fitfillSamples">
+<DIV class="fill">
+<DIV class="samples-title">
+<DIV class="small small-add"> Expand to completely fill the print area of each 
+product - no blank space.</DIV>
+<DIV class="big">fill: </DIV></DIV>
+<DIV class="example-container">
+<DIV class="example-img fill-img" data-bind="css:{disabled: fitChosen() &amp;&amp; !fitSelected()} ,click: chooseFitFillOption.bind(this,false)"></DIV>
+<DIV class="example-text">Example:</DIV></DIV>
+<DIV class="listbutton buttons buttons-fill" data-bind="css:{disabled: fitChosen() &amp;&amp; !fitSelected()} ,click: chooseFitFillOption.bind(this,false)">
+<P data-bind="css:{disabled: fitChosen() &amp;&amp; !fitSelected()}">Choose Fill 
+&raquo;</P></DIV></DIV>
+<DIV class="fit">
+<DIV class="samples-title">
+<DIV class="small">Shrink to fit within the print area of each product.</DIV>
+<DIV class="big">fit: </DIV></DIV>
+<DIV class="example-container">
+<DIV class="example-img fit-img" data-bind="css:{disabled: fitChosen() &amp;&amp; fitSelected()} ,click: chooseFitFillOption.bind(this,true)"></DIV>
+<DIV class="example-text">Example:</DIV></DIV>
+<DIV class="listbutton buttons" data-bind="css:{disabled: fitChosen() &amp;&amp; fitSelected()} ,click: chooseFitFillOption.bind(this,true)">
+<P data-bind="css:{disabled: fitChosen() &amp;&amp; fitSelected()}">Choose Fit 
+&raquo;</P></DIV></DIV></DIV>
+<DIV class="gbutton button-reposition-dialog abutton" 
+data-bind="click: notNow">Cancel</DIV></DIV>
+<DIV class="review-wrap closebutton" data-bind="click: notNow">Close</DIV></DIV>
+<DIV class="terms-wrap" data-bind="visible: showTermsAndConditions">
+<H2>Accept Terms &amp; Conditions</H2>
+<FIELDSET><!-- ko foreach: notAcceptedPartnerTags -->		 
+<DIV id="term"><INPUT name="accept" type="checkbox" data-bind="checked: Accepted">
+			Accept <SPAN data-bind="text: PartnerName"></SPAN> <A data-bind="attr:{href: $root.getTermsAndConditionsUrl($data)}">Terms 
+&amp; Conditions</A>		 </DIV><!-- /ko -->
+			 <INPUT class="button listbutton" style="margin-right: 10px;" type="submit" value="Accept" data-bind="css:{hidden: !showAcceptTermsAndConditionsButton()}, click: persistPartnerTags">
+			 <INPUT class="button listbutton" type="submit" value="Cancel" data-bind="click: cancelPartnerTags">
+		 </FIELDSET></DIV>
+<DIV class="filter-bar" data-bind="fadeVisible: collectionVisibleFilterBar() &amp;&amp; !editProductFlowStarted() &amp;&amp; !reviewDialogVisible()">
+<DIV class="wrapper clearfix">
+<DIV class="upload-prodmatch-imagename">
+<DIV class="gbuttonEdit abuttonEdit edititEdit" data-bind="fadeShowOnlyVisible: collectionVisible,click: editProductFlow">Edit 
+Products &raquo;</DIV><SPAN class="tipEditProduct" data-bind="fadeVisible: editProductsTooltipVisible">
+<DIV class="triangleEditProduct"></DIV>Click Edit Products to remove any 
+products you're unhappy with below.<BR><A data-bind="click: closeEditProductsTooltip">Close 
+tip</A></SPAN>			 
+<DIV style="display: inline-block;">
+<P class="lgray" 
+data-bind="fadeShowOnlyVisible: numberOfSuggestions() == 0">Rendering product 
+previews for: </P>
+<P class="productmatch" data-bind="fadeShowOnlyVisible: numberOfSuggestions() != 0"><!-- ko text: numberOfSuggestions --><!-- /ko --> 
+products for: 
+<P class="imagename" data-bind="text: imageNameForDisplay"></P>
+<P></P></DIV>
+<DIV class="clear"></DIV></DIV></DIV></DIV>
+<DIV class="filter-bar" data-bind="fadeShowOnlyVisible: editProductFlowStarted() &amp;&amp; !reviewDialogVisible()">
+<DIV class="editflow" data-bind="fadeShowOnlyVisible: editProductFlowStarted() &amp;&amp; !reviewDialogVisible()">
+<DIV class="buyflow-message">Check the products below you wish to delete. </DIV>
+<DIV class="gbutton nonefloat" data-bind="css:{disabled: selectedSuggestionsCount() == 0}, click: reviewAndDeleteSelected">Delete 
+Selected Items</DIV>
+<DIV class="gbutton nonefloat notnow" 
+data-bind="click: notNow">Cancel</DIV></DIV></DIV><!--review for deletion-->	 
+<DIV class="review" data-bind="fadeVisible: editProductFlowStarted() &amp;&amp; reviewDialogVisible() &amp;&amp; !repositionFlowStarted()">
+<DIV class="review-wrap">
+<P style="color: black; padding-bottom: 24px; font-size: 16px; font-weight: bold;">Confirm 
+your choices:</P>
+<DIV class="item-wrap" data-bind="foreach: selectedSuggestions">
+<DIV class="item">
+<DIV class="removeReviewedItem" data-bind="click: $root.disselectSuggestion.bind($data)">X</DIV><IMG 
+width="75" height="75" data-bind="attr: {src: $root.resizedProductImage($data.ProductCrunchUrls()[0], 75) }">
+					 
+<P data-bind="text:$root.computedProductTypeCaption($data)"></P></DIV></DIV>
+<DIV style="clear: both;"></DIV><BUTTON class="button listbutton cancelbutton abutton" 
+data-bind="click: cancelReviewAndAddPopup">Cancel</BUTTON>			 <BUTTON class="button listbutton cancelbutton" 
+data-bind="click: deleteAfterReview">Confirm Delete</BUTTON>		 </DIV></DIV><!--end-->
+	 
+<DIV class="wrapper fluid-wrapper clearfix" id="product-container" data-bind="slideVisible: collectionVisible">
+<DIV class="design-wrap clearfix"><!-- ko foreach: suggestions -->			 
+<DIV class="item-wrap" data-bind="css:{lazy: $index() > 15}, attr: {ptn: ProductTypeNo, designid: ImageNo, productid: productNo, guid: GUID, memberno: $root.memberNo, token: $root.token, width: width, height: height, cropX: cropX, cropY: cropY }">
+<DIV class="views" data-bind="foreach: $root.resizedProductImages($data.ProductCrunchUrls, 275), click: $root.goThroughProductViews.bind($data, $element)"><IMG 
+width="275" height="275" data-bind="attr: {'data-original': $root.suggestions.indexOf($parent) > 15 ? $data : '', src: $root.suggestions.indexOf($parent) > 15 ? '' : $data }, visible: $index() == 0">
+				 </DIV>
+<DIV class="item-details">
+<DIV class="remove" data-bind="click: $root.removeSuggestion.bind($data)">
+<DIV class="trashbin"></DIV>
+<DIV class="removeWrap">remove </DIV></DIV>
+<DIV class="checkbox" 
+data-bind="fadeVisible: $root.editProductFlowStarted()"><INPUT type="checkbox" 
+data-bind="checked: selected"></DIV>
+<P data-bind="text:$root.computedProductTypeCaption($data)"></P>
+<DIV class="buyinfo" data-bind="visible: salePrice() != 0">
+<DIV class="price" 
+data-bind="text: $root.currency().Symbol + $data.salePrice()"></DIV></DIV>
+<DIV class="details"><SPAN data-bind="text: $root.getProductTypeDimensions($data), visible: ProductTypeWidth() != 0 &amp;&amp; ProductTypeHeight() != 0"></SPAN><BR><SPAN 
+class="upload-prod-description" data-bind="text: description, visible: description() != ''"></SPAN>
+					 </DIV></DIV></DIV><!-- /ko -->		 </DIV></DIV>
+<DIV class="footer">
+<DIV class="block">
+<UL class="floatfix">
+  <LI><A href="http://www.cafepress.com/cp/info/about/" rel="nofollow">About 
+  CafePress</A></LI>
+  <LI><A href="http://www.cafepress.com/cp/info/help/" 
+  rel="nofollow">Help</A></LI>
+  <LI><A href="http://forums.cafepress.com/eve/ubb.x" 
+  rel="nofollow">Forums</A></LI>
+  <LI><A href="http://www.cafepress.com/cp/tags/">Tags</A></LI>
+  <LI><A href="http://www.cafepress.com/cp/products/">Products</A></LI>
+  <LI class="last"><A 
+  href="http://www.cafepress.com/cp/sitemap/">Sitemap</A></LI></UL>
+<P>All Content &copy; 1999-2014 <A href="http://www.cafepressinc.com/">CafePress 
+Inc.</A> Use of this web site constitutes acceptance of the <A class="green pointer" 
+onclick='window.open("http://" + window.cafepress.www + "/cp/popup/index.aspx?page=terms_policies", "myWindow", "height = 450, width = 925, scrollbars=1")' 
+target="_blank" rel="nofollow">Terms of Service</A>.</P></DIV></DIV></DIV>
+<DIV class="step1">
+<DIV class="upload-wrapper" data-bind="visible: isBrowserHtml5UploadCapable() || isBrowserFlashCapable()"></DIV>
+<DIV class="unsupported-browser" data-bind="fadeVisible: !isBrowserHtml5UploadCapable() &amp;&amp; !isBrowserFlashCapable()">
+		Your browser is neither HTML5 enabled, nor it has Flash plugin installed. You 
+can download <A href="http://www.google.com/chrome/">HTML5 enabled browser 
+provided by Google</A> or just install <A href="http://get.adobe.com/flashplayer/">Flash</A> 
+on your current browser.	 </DIV></DIV>
+<DIV class="loading-spinner" 
+data-bind="fadeVisible: loading"></DIV></BODY></HTML>

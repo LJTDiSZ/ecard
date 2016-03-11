@@ -1,5 +1,6 @@
 //card.js
 //namecard schema
+//Store namecard data
 
 'use strict'
 
@@ -13,8 +14,12 @@ var CardSchema = new mongoose.Schema({
 	tel: String,
 	mobile: String,
 	email: String,
+	QRCode: String,
+	photo: String,//TBD
+
 	ccompany: String,
 	ecompany: String,
+	logo: String, //TBD
 	caddress: String,
 	eaddress: String,
 	website: String,
