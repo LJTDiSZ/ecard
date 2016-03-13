@@ -24,7 +24,7 @@ span{display: inline-block;}
 .topBar .logoR7{padding-top: 0px;width: 200px;}
 .topBar .active{background-color:#222;background: rgba(0,0,0,0.5);}
 .topBar li a.navbar-link{width:60px;font-size: 16px;}
-.topBar ul.pull-right li{padding-top: 15px;}
+.topBar ul.pull-right li{padding-top: 10px;}
 
 .pagesContianer{height:100%;z-index: 9;display: none; top:40px;}
 .page{width:100%;height:100%;background:50% 50% no-repeat;background-size: cover;}
@@ -32,6 +32,7 @@ span{display: inline-block;}
 .pageContent{width:100%;position: absolute;left:48px;/*left: 50%;margin-left: -500px;*/transform-origin:50% 50%;-webkit-transform-origin:50% 50%;}
 
 #page1 .pageBackground{background-color:#66ffcc;}
+#page1 #templogo{position: absolute; left: 748px;top: 0px;height: 35%;text-align: center;}
 #page1 #page1Text {position: absolute; left: 748px;top: 40%;font-family: 'Microsoft Yahei Light', 'Microsoft Yahei';text-align:center;}
 #page1 a{display:inline-block;margin:10px;border:1px solid #7f7f7f;border-radius:15px;background-color:#7f7f7f;color:#fff;height:100px;width:270px;font-size:56px;padding-top:15px;}
 #page1 .bk1{padding-top: 64px;}

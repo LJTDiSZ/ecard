@@ -16,6 +16,7 @@ var logger = require('morgan')
 var mongoose = require('mongoose')
 var mongoStore = require('connect-mongo')(session)
 var moment = require('moment')
+var fs = require('fs');
 var routes = require('./config/routes')
 
 var port = process.env.PORT || 3000
@@ -54,6 +55,16 @@ if ('development' === app.get('env')) {
 	app.locals.pretty = true
 	mongoose.set('debug', true)
 }
+
+fs.mkdir('public/tmp',function(e){
+    if(!e || (e && e.code === 'EEXIST')){
+        //do something with contents
+        console.log('public/tmp is good.');
+    } else {
+        //debug
+        console.log(e);
+    }
+});
 
 app.listen(port)
 

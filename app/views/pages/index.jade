@@ -6,6 +6,9 @@ block content
         .pageBackground
           .pageContent
             img.bk1(src='images/pages/index/1/bk.png')
+            #templogo
+              if tmplogo
+                img(src='#{tmplogo}')
             #page1Text
               span(style='font-size:24px;color:#5a5a5a;') 公司名
               span(style='font-size:24px;color:#404040;') Logo形状智能识别，寻找适合您的名片设计

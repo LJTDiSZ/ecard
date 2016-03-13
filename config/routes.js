@@ -21,6 +21,9 @@ module.exports = function (app) {
 
 	//Index
 	app.get('/', Index.index)
+	app.post('/', Index.postindex)
+
+	app.post('/logoupload', Index.logoupload)
 
 	//User
 	app.post('/user/signup', User.signup)

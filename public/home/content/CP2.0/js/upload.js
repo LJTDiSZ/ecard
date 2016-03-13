@@ -1465,8 +1465,41 @@ function uploader(buttons, container, displayAnonymousTemplate){
 	$.getScript('content/CP2.0/js/vendor/lazyload.js');
 	$.getScript('content/CP2.0/js/vendor/knockout-2.2.1.js', function(){
 		$.getScript('content/CP2.0/js/vendor/knockout.mapping.js', function(){
-			var templateName = 'upload_template' + (displayAnonymousTemplate ? '_anonymous' : '') + '.html';
-			$.get('content/CP2.0/templates/' + templateName, {}, self.templateLoaded);
+			// var templateName = 'upload_template' + (displayAnonymousTemplate ? '_anonymous' : '') + '.html';
+			// $.get('content/CP2.0/templates/' + templateName, {}, self.templateLoaded);
+
+			var $file = $('#first input[type=file]');
+            $('.cta.upload').click(function() {
+                $file.click();
+            });
+            $file.change(function() {
+                var path = $(this).val();
+                // var fileName = path ? path.substr(path.lastIndexOf('\\') + 1) : '请上传文件';
+                // $fileName.text(fileName);
+                console.log(path);
+
+                var formData = new FormData();
+                formData.append('file', $file[0].files[0]);
+
+                $.ajax({
+                    url : '/logoupload',
+                    type : 'POST',
+                    data : formData,
+                    processData: false,  // tell jQuery not to process the data
+                    contentType: false,  // tell jQuery not to set contentType
+                    success : function(data) {
+                        console.log(data.tmpname);
+                        $().redirect('/', {'tmplogo': data.tmpname});
+                    },
+                    error: function(xhr, errtext, ex){
+                    	console.log(xhr.status);
+						console.log(xhr.readyState);
+						console.log(errtext);
+						console.log(ex);
+						console.log(xhr.responseText);
+                    }
+                });
+            });
 		});
 	});
 
